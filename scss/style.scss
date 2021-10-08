@@ -23,10 +23,8 @@ a {
 }
 
 .showcase {
-  background-color: $primary-color;
-  color: set-text-color(
-    $primary-color
-  ); // _config.scss 에서 정의한 함수를 가져와서 사용함. .showcase의 배경색에 따라 다른 색상값을 리턴해 줌.
+  // _config.scss 에서 정의한 @mixin을 이용하여 배경색과 그에 따른 텍스트 컬러를 자동으로 지정함.
+  @include set-background($primary-color);
   height: 600px;
 
   nav {
