@@ -1,6 +1,4 @@
 @import "config";
-@import "utilities";
-@import "buttons";
 
 * {
   box-sizing: border-box;
@@ -57,6 +55,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 
     img {
       width: 50%;
@@ -68,3 +67,22 @@ a {
     }
   }
 }
+
+// @import 작업을 해주는 위치가 달라지면 컴파일된 css 파일에서도 해당 import된 partial이 그 위치에 맞게 컴파일될거임.
+@import "utilities";
+@import "buttons";
+@import "mobile"; // 그냥 css로 짤 때도 미디어쿼리는 맨 하단에 작성하니까 partial로 나눈 파일로 맨 밑에서 import 하도록 함.
+
+/*
+마지막으로 중요한 포인트!
+  
+sass를 사용해서 만든 웹 어플리케이션을 배포할 때,
+scss 폴더안에 담긴 .scss 파일은 배포를 해선 안된다.
+
+왜냐하면 어차피 웹 브라우저가 읽을 수 있는 파일은
+css 폴더안에 컴파일된 css 파일 하나밖에 없기 때문에
+scss 폴더를 서버에 업로드하고 배포해봐야 용량만 차지하고 좋을 게 없음.
+
+어쨋든 scss는 개발자가 사용하는 파일이므로
+배포할 때 제외시켜야 한다!
+*/
