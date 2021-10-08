@@ -1,4 +1,16 @@
 $font-stack: Arial, Helvetica, sans-serif;
 $light-color: #f4f4f4;
-$primary-color: #0e6cff;
+// $primary-color: #0e6cff;
+$primary-color: #e0ffff;
 $secondary-color: #ff8700;
+
+// Set text color based on background color using 'function'!!!
+@function set-text-color($color) {
+  // lightness(color) 역시 sass built-in 함수. 0 ~ 100 사이의 숫자를 리턴해 줌.
+  // 그래서 리턴된 명도값이 70보다 높으며 if block을 수행하라는 것!
+  @if (lightness($color) > 70) {
+    @return #333; // 배경색 명도가 70% 이상이면 해당 컬러를 리턴해줄 것.
+  } @else {
+    @return #fff;
+  }
+}

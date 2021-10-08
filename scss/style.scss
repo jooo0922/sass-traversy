@@ -24,7 +24,9 @@ a {
 
 .showcase {
   background-color: $primary-color;
-  color: #fff;
+  color: set-text-color(
+    $primary-color
+  ); // _config.scss 에서 정의한 함수를 가져와서 사용함. .showcase의 배경색에 따라 다른 색상값을 리턴해 줌.
   height: 600px;
 
   nav {
@@ -39,6 +41,12 @@ a {
 
     li {
       padding: 15px;
+    }
+
+    a {
+      color: set-text-color(
+        $primary-color
+      ); // 얘도 마찬가지로 배경색에 따라 색상값을 리턴해주는 함수 사용!
     }
 
     a:hover {
