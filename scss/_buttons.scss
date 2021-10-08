@@ -11,13 +11,14 @@
 
 .btn-primary {
   @extend %btn;
-  background-color: lighten(
-    $primary-color,
-    10%
-  ); // lighten(color, percent)는 sass의 built-in function
+  @include set-background(
+    lighten($primary-color, 10%)
+  ); // built-in 함수가 리턴해주는 값을 인자로 전달하여 mixin을 호출함.
 }
 
 .btn-secondary {
   @extend %btn;
-  background-color: $secondary-color;
+  @include set-background(
+    $secondary-color
+  ); // built-in 함수가 리턴해주는 값을 인자로 전달하여 mixin을 호출함.
 }
