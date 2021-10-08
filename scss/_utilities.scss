@@ -4,3 +4,26 @@
   margin: 0 auto;
   overflow: auto;
 }
+
+// Margin & padding classes
+$spaceamounts: (1, 2, 3, 4, 5); // js로 치면 임의의 배열을 만들어놓은 것 같음.
+
+// js로 치면 for...in 문법을 이용해서 loop를 돌리는 것.
+@each $space in $spaceamounts {
+  // 이렇게 하면 $spaceamounts 안에 있는 각각의 숫자들이 $space 안으로 들어올 것이고,
+  // 하단의 스타일시트에서 m-1, m-2, m-3 ... 이런 식으로 loop를 돌면서 클래스명을 만들어준다고 보면 됨.
+  // 또한 margin값을 $space로 받아온 값을 이용해서 지정해줄 수 있음.
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}
