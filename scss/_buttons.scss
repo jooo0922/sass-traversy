@@ -1,4 +1,6 @@
 %btn {
+  // % 기호는 뭐냐면, 다른 스타일시트에 @extend 명령어를 이용해서
+  // '상속'해주고 싶은 스타일시트의 이름 옆에 붙여주는 것. -> 이걸 해주면 다른 스타일시트로 상속할 수 있음.
   display: inline-block;
   border-radius: 5px;
   padding: 8px 20px;
